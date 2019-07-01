@@ -1,0 +1,25 @@
+{
+  "name": "multi-websockets",
+  "version": "1.0.0",
+  "description": "This purpose of this sample is to have a websocket server to be hosted on azure as a starting point.",
+  "main": "index.js",
+  "dependencies": {
+    "ws": "^5.2.0",
+    "ws-multipath": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariuszparys/multi-websocket-sample.git"
+  },
+  "author": "Dariusz Parys",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dariuszparys/multi-websocket-sample/issues"
+  },
+  "homepage": "https://github.com/dariuszparys/multi-websocket-sample#readme"
+}
