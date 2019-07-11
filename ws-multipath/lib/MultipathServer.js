@@ -15,6 +15,7 @@ const PRIVATE_ATTRS = ['port', 'autoListen'];
 const defaults = {
   autoListen: true,
   rejectUnhandled: true,
+  perMessageDeflate: false
 };
 
 function MultipathServer(options) {
