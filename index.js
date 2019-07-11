@@ -1,19 +1,53 @@
-const MultipathServer = require("ws-multipath");
+const appInsights = require("applicationinsights");
+appInsights.setup("a7e55d96-6e3c-453b-9758-51ab6628182b");
+appInsights.start();
+const appInsightsClient = appInsights.defaultClient;
+const MultipathServer = require("./ws-multipath");
 const http = require("http");
 const WebSocket = require("ws");
 
-const server = new MultipathServer({ port: 80 });
+try
+{
+    const port = process.env.PORT || 1337;
+    console.log("Trying to start listening on port " + port);
+    const server = new MultipathServer({ port: port });
+    appInsightsClient.trackTrace({message: "started on port " + port});
 
-const foo = server.createHandler({ path: '/foo' });
-const bar = server.createHandler({ path: '/bar' });
+    //const root = server.createHandler({ path: '/'});
+    const foo = server.createHandler({ path: '/foo' });
+    const bar = server.createHandler({ path: '/bar' });
+    
+    server.on('request', (req, response) => {
+        console.dir("request for " + req.url);
+        response.writeHead(204);
+        response.end();
+    });
+    
+    server.on('unhandled', (ws,req) => {
+        console.dir("Unhandled request");
+        console.dir(req);
+    })
 
-// handle sockets connecting to ws://localhost:1234/foo
-foo.on('connection', (ws, req, path) => {
-    console.dir(req);
-    ws.send('hello from /foo!');
-});
+    server.on('error', (error) => {
+        console.error(error);
+    })
 
-// handle sockets connecting to ws://localhost:1234/bar
-bar.on('connection', (ws) => {
-    ws.send('hello from /bar!');
-});
+    // handle sockets connecting to ws://localhost:1234/foo
+    foo.on('connection', (ws, req, path) => {
+        console.dir(req);
+        ws.send('hello from /foo!');
+    });
+    
+    // handle sockets connecting to ws://localhost:1234/bar
+    bar.on('connection', (ws) => {
+        ws.send('hello from /bar!');
+    });
+}
+catch (error)
+{
+    console.error(error);
+    appInsightsClient.trackException({exception: error});
+    throw error;
+}
+
+

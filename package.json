@@ -4,6 +4,7 @@
   "description": "This purpose of this sample is to have a websocket server to be hosted on azure as a starting point.",
   "main": "index.js",
   "dependencies": {
+    "applicationinsights": "^1.4.0",
     "ws": "^5.2.0",
     "ws-multipath": "^0.1.0"
   },

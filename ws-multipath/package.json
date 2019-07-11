@@ -1,0 +1,110 @@
+{
+  "_args": [
+    [
+      "ws-multipath@^0.1.0",
+      "/c/Dev/multi-websocket-sample"
+    ]
+  ],
+  "_from": "ws-multipath@>=0.1.0 <0.2.0",
+  "_id": "ws-multipath@0.1.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/ws-multipath",
+  "_nodeVersion": "6.2.2",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/ws-multipath_0.1.0_1518392316428_0.045997250962922065"
+  },
+  "_npmUser": {
+    "email": "dwaseem@icloud.com",
+    "name": "wsmd"
+  },
+  "_npmVersion": "3.9.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "ws-multipath",
+    "raw": "ws-multipath@^0.1.0",
+    "rawSpec": "^0.1.0",
+    "scope": null,
+    "spec": ">=0.1.0 <0.2.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ws-multipath/-/ws-multipath-0.1.0.tgz",
+  "_shasum": "7dbe18ee18ec3a5b4758060adc2148989660a944",
+  "_shrinkwrap": null,
+  "_spec": "ws-multipath@^0.1.0",
+  "_where": "/c/Dev/multi-websocket-sample",
+  "author": {
+    "email": "dwaseem@icloud.com",
+    "name": "Waseem Dahman",
+    "url": "https://github.com/wsmd"
+  },
+  "bugs": {
+    "url": "https://github.com/wsmd/ws-multipath/issues"
+  },
+  "dependencies": {},
+  "description": "Serve multiple WebSocket endpoints using one shared server",
+  "devDependencies": {
+    "coveralls": "3.0.0",
+    "eslint": "4.17.0",
+    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jest": "21.8.0",
+    "eslint-plugin-node": "6.0.0",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "http-headers": "3.0.2",
+    "jest": "22.2.2",
+    "mitm": "1.3.3"
+  },
+  "directories": {},
+  "dist": {
+    "fileCount": 19,
+    "shasum": "7dbe18ee18ec3a5b4758060adc2148989660a944",
+    "tarball": "https://registry.npmjs.org/ws-multipath/-/ws-multipath-0.1.0.tgz",
+    "unpackedSize": 40326
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "gitHead": "d2744a500a500f8a33e8229b83b9c622a93484a2",
+  "homepage": "https://github.com/wsmd/ws-multipath#readme",
+  "jest": {
+    "testRegex": "/test/.*.test.js$"
+  },
+  "keywords": [
+    "multipath",
+    "server",
+    "websocket",
+    "ws"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "wsmd",
+      "email": "dwaseem@icloud.com"
+    }
+  ],
+  "name": "ws-multipath",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "ws": ">=0.5.0"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wsmd/ws-multipath.git"
+  },
+  "scripts": {
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "lint": "eslint src test",
+    "prepare": "yarn run lint && yarn run test",
+    "test": "jest --coverage --verbose",
+    "test:watch": "jest --watch --verbose --coverage"
+  },
+  "version": "0.1.0"
+}
