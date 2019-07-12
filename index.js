@@ -1,5 +1,5 @@
 const appInsights = require("applicationinsights");
-appInsights.setup("a7e55d96-6e3c-453b-9758-51ab6628182b");
+appInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY);
 appInsights.start();
 const appInsightsClient = appInsights.defaultClient;
 const MultipathServer = require("./ws-multipath");
